@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login | House Price Prediction</title>
+
+  <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+</head>
+<body>
+  <main class="wrap" role="main" aria-labelledby="login-title">
+    <header class="hero">
+      <div class="logo" aria-hidden="true"><a href="/Home"> 🏠</a></div>
+      <div>
+        <h1 id="login-title">House Price Predictor</h1>
+        <p>Sign in to access your dashboard</p>
+      </div>
+    </header>
+
+    <section class="card" aria-label="Login card">
+      <form action="/LoginUser" , method="post" , id="loginForm" , autocomplete="on" novalidate >
+        <div>
+          <label for="userName">Username</label>
+          <input id="userName" name="UserName" class="input" type="text" placeholder="you@domain.com or username" required aria-required="true">
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <div class="field-row">
+            <input id="password" name="Password"  class="input" type="password" placeholder="Enter password" required aria-required="true" minlength="6">
+            <button type="button" class="toggle-btn" id="togglePwd" aria-label="Show password">Show</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="remember"><input type="checkbox" id="remember" name="remember"> Remember me</label>
+          <a class="link" href="/Forget">Forgot?</a>
+        </div>
+         
+        <input type="submit" class="btn" value="Login">
+       
+
+        <div class="bottom-links" aria-hidden="false">
+          <div class="small">New here? <a class="link" href="/Register">Create an account</a></div>
+          <div id="msg" class="helper" aria-live="polite"></div>
+        </div>
+       </form>
+    </section>
+  </main>
+
+  <script src="{{url_for('static',filename='js/login.js')}}"></script>
+</body>
+</html>

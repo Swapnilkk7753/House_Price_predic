@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register | House Price Predictor</title>
+   <link rel="stylesheet" href="{{url_for('static',filename='css/register.css')}}">
+</head>
+<body>
+  <main class="wrap" role="main" aria-labelledby="reg-title">
+    <header class="header">
+      <div class="logo" aria-hidden="true"><a href="/Home">🏠</a></div>
+      <div>
+        <h1 id="reg-title">Create account</h1>
+        <p>Register to use House Price Predictor</p>
+      </div>
+    </header>
+
+    <section class="body" aria-label="Registration form">
+      <form id="registerForm" action="/RegisterUser" method="POST" novalidate>
+        <div>
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="FullName" class="input" type="text" placeholder="Your full name" required />
+        </div>
+
+        <div>
+          <label for="userName">Username</label>
+          <input id="userName" name="UserName" class="input" type="text" placeholder="Choose a username" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="Email" class="input" type="email" placeholder="you@gmail.com"  required />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <div class="field-row">
+            <input id="password" name="Password" class="input" type="password" placeholder="Create password" required minlength="6" />
+            <button type="button" class="toggle-btn" id="togglePwd" aria-label="Show password">Show</button>
+          </div>
+          <div class="pw-meter" aria-hidden="true"><i id="pwBar"></i></div>
+          <div class="meta" id="pwText">Use 8+ characters, mix letters & numbers for stronger password.</div>
+        </div>
+
+        <div>
+          <label for="cPassword">Confirm password</label>
+          <input id="cPassword" name="CPassword" class="input" type="password" placeholder="Re-enter password" required />
+        </div>
+
+        <div class="row">
+          <label style="font-weight:700; color:var(--muted);"><input type="checkbox" id="agree" required /> I agree to the terms</label>
+        </div>
+
+        <input type="submit" class="btn" id="regBtn" value="Register">
+
+        <div id="msg" class="msg" role="status" aria-live="polite"></div>
+
+        <div class="links">
+          <a href="/Login">Already have an account?</a>
+          <a href="/Forget">Forgot password?</a>
+        </div>
+      </form>
+    </section>
+  </main>
+<script src="{{url_for('static',filename='js/register.js')}}"></script>
+  </body>
+</html>

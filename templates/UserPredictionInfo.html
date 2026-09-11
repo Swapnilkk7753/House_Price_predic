@@ -1,0 +1,127 @@
+{%extends "base.html"%}
+{%block title%}Predictin Info{%endblock%}
+{%block he%}
+<style>
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 5pc;
+        background-color: #0e230f33;
+    
+    }
+    #p1{
+        width: 75%;
+        height: 100%;
+    }
+    table{
+    width: 70%;
+    height: 100%;
+    font-size: x-large;
+    }
+    b{
+        color: #10a6e6;
+    }
+    #p2{
+    display: flex;
+    justify-content: center;
+    
+    }
+    a{
+    border-radius: 20px;
+    text-decoration: none;
+    background-color: rgb(24, 24, 241);
+    font-size: x-large;
+    color:white;
+    padding: 10px;
+    text-align: center;
+    }
+</style>
+{%endblock%}
+{%block bo%}
+<div id="p1">
+   
+    <h1> <span style="color: red;">Mr. {{session["Name"]}} </span>your house cost for the inputted following information is =<span style="color: red;">Rs. {{TC}}</span></h1>
+<br>
+    <table border="1px">
+    <tr>
+        <td><b>Client Name</b></td>
+        <td><b style="color: black;"> Mr. {{session["Name"]}}</b></td>
+    </tr>
+    <tr>
+        <td><b> State</b></td>
+        <td>{{St}}</td>
+    </tr>
+     <tr>
+        <td><b> District</b></td>
+        <td>{{Ds}}</td>
+    </tr>
+     <tr>
+        <td><b>Sub District</b></td>
+        <td>{{Sd}}</td>
+    </tr>
+     <tr>
+        <td><b> Sub City</b></td>
+        <td>{{Sc}}</td>
+    </tr>
+     <tr>
+        <td><b> Area Type</b></td>
+        <td>{{At}}</td>
+    </tr>
+     <tr>
+        <td><b> Grade Type</b></td>
+        <td>{{Gt}}</td>
+    </tr>
+     <tr>
+        <td><b> House Size</b></td>
+        {% if Hs=="1"%}
+        <td>Minimum</td>
+        {% elif Hs=="0"%}
+        <td>Large</td>
+        {% elif Hs=="2"%}
+        <td>Standard</td>
+        {%endif%}
+    </tr>
+    <tr>
+        <td><b> House Furnished Status</b></td>
+        {% if Hfs=="1"%}
+        <td>Semi Furnished</td>
+        {% elif Hfs=="0"%}
+        <td>Furnished</td>
+        {% elif Hfs=="2"%}
+        <td>UnFurnished</td>
+        {%endif%}
+    </tr>
+    <tr>
+        <td><b> Area of House</b></td>
+        <td>{{Ah}} Sqft</td>
+    </tr>
+    <tr>
+        <td><b> Stories</b></td>
+        <td>{{So}}</td>
+    </tr>
+    <tr>
+        <td><b> Number of Bedrooms</b></td>
+        <td>{{Bd}}</td>
+    </tr>
+    <tr>
+        <td><b> Number of Bathrooms</b></td>
+        <td>{{Bt}}</td>
+    </tr>
+    <tr>
+        <td><b> Number of Living Room/Hall</b></td>
+        <td>{{Lr}}</td>
+    </tr>
+    <tr>
+        <td><b> Number of Kitchen</b></td>
+        <td>{{Nk}}</td>
+    </tr>
+</table>
+<h2>Land Price= <span style="color: red;">Rs. {{LP}}</span></h2>
+<h2>Construction Cost= <span style="color: red;">Rs. {{CC}}</span></h2>
+<br>
+<div id="p2"><a href="/Predict">  Predict Again  </a></div>
+</div>
+{%endblock %}

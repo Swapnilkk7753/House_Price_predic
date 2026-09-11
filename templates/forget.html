@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Forgot Password | House Price Predictor</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/forgot.css')}}">
+</head>
+<body>
+
+  <main class="card" role="main" aria-labelledby="forgot-title">
+    <header class="card-header">
+      <div class="logo" aria-hidden="true"><a href="/Home">🏠</a></div>
+      <div>
+        <h1 id="forgot-title">Forgot Password</h1>
+        <p>Enter your registered email to reset your password</p>
+      </div>
+    </header>
+
+    <section class="card-body" aria-label="Reset password form">
+      <p class="lead">We will send a password reset link to your registered email address. Follow the link to create a new password.</p>
+
+      <form id="forgotForm" action="/ForgetBtn" method="post" novalidate>
+        <div>
+          <label for="email">Registered Email</label>
+          <input id="email" name="Email" type="email" placeholder="you@domain.com" required aria-required="true" />
+        </div>
+
+        <input type="submit" class="btn" id="sendBtn" value="Reset">
+
+        <div id="msg" class="msg" role="status" aria-live="polite"></div>
+
+        <div class="links" aria-hidden="false">
+          <a href="/Login">Back to Login</a>
+          <a href="/Register">Create account</a>
+        </div>
+
+        <p class="helper">If you don't receive the email within a few minutes check your spam folder. Replace the demo flow with your server-side implementation (example: POST to `/send-reset`).</p>
+      </form>
+    </section>
+  </main>
+
+  <script src="{{url_for('static',filename='js/forgot.js')}}"></script>
+</body>
+</html>
